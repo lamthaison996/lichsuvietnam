@@ -1,0 +1,146 @@
+@import "colors";
+@import "fonts";
+@import "responsive";
+@import "common";
+@import "animation";
+
+#backToTop {
+    position: fixed;
+    top: 550px;
+    right: 25px;
+    height: 35px;
+    width: 35px;
+    background-image: url("../images/back-to-top-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 10;
+    cursor: pointer;
+
+    @include for-size(desktop) {
+        opacity: 1;
+    }
+
+    @include for-size(phone) {
+        opacity: 0;
+    }
+}
+
+#backToTop:hover {
+    opacity: 0.8;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    &-nav {
+        background-color: $black;
+        text-align: center;
+    }
+
+    &-logo {
+        padding: 1rem;
+        h1 {
+            color: white;
+            font-family: "Patrick Hand", cursive;
+            font-size: 5rem;
+        }
+    }
+
+    &-menuList {
+        text-align: center;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        margin: 0;
+    }
+
+    &-item {
+        display: inline-block;
+        a {
+            position: relative;
+            text-transform: uppercase;
+            line-height: 1.4rem;
+            font-weight: 400;
+            margin: 1rem;
+            color: $white;
+            font-size: 1.4rem;
+            font-family: "Patrick Hand", cursive;
+            &:hover {
+                &:before {
+                    opacity: 1;
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+        a:before {
+            content: "";
+            position: absolute;
+            top: 2rem;
+            height: 0.2rem;
+            left: 50%;
+            background-color: white;
+            width: 0;
+            transition: .2s ease-in;
+            opacity: 0;
+        }     
+    }
+
+   
+
+    a:hover {
+        text-decoration: none;
+        opacity: 0.8;
+        color: white;
+    }
+}
+
+.main {
+    height: 2000px;
+    .main-intro {
+        height: 20vh;
+        z-index: 3;
+        position: relative;
+        &-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 70%;
+            z-index: 1;
+            height: 20rem;
+            width: 100%;
+            color: white;
+            text-align: center;
+            background-color: $black;
+            opacity: 0.4;
+            h3 {
+                font-size: 7rem;
+                font-family: "Amatic SC", cursive;
+                font-weight: 800;
+            }
+        }
+        &-video {
+            object-fit: cover;
+            position: absolute;
+            right: 0;
+            top: 0;
+            min-width: 100%;
+            height: 100vh;
+        }
+    }
+}
+
+.history-begin {
+    &-container {
+        height: 200vh;
+    }
+
+    &-bg {
+        position: sticky;
+        top: 0;
+        background-image: url("../images/img-war.jpg");
+        height: 100vh;
+        background-size: cover;
+    }
+}

@@ -1,0 +1,13 @@
+#main-intro-title{
+    animation:5s ease-in-out 5s infinite alternate-reverse fadein;
+    opacity: 0;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
